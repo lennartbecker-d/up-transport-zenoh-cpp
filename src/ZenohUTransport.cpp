@@ -241,7 +241,6 @@ v1::UStatus ZenohUTransport::registerPublishNotificationListener_(
 		auto maybe_message = sampleToUMessage(sample);
 		if (maybe_message.has_value()) {
 			listener(maybe_message.value());
-			spdlog::debug("Listener executed successfully. message:{}", maybe_message.value().DebugString());
 		} else {
 			spdlog::error("on_sample: failed to retrieve uMessage");
 		}
